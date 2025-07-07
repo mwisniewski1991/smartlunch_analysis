@@ -4,6 +4,9 @@
 
 This project is a comprehensive data collection and analysis system for tracking meal prices, restaurant ratings, and menu availability from SmartLunch delivery service. The system was designed to gather data over 6 months to analyze pricing trends, restaurant performance, and meal availability patterns.
 
+The project includes comprehensive analysis in `ANALYSIS_ENG.md` or `ANALYSIS_PL.md`.
+
+
 ## 🎯 Project Goals
 
 - **Data Collection**: Automatically scrape restaurant and menu data from SmartLunch API
@@ -25,7 +28,6 @@ This project is a comprehensive data collection and analysis system for tracking
 - **Jupyter Notebook** for data exploration
 - **Pandas** for data manipulation
 - **Altair** for data visualization
-- **Plotly** for interactive charts
 
 **Monitoring:**
 - **Telegram Bot** for notifications
@@ -35,27 +37,35 @@ This project is a comprehensive data collection and analysis system for tracking
 
 ```
 lunch_analysis/
-├── src/                          # Core application modules
-│   ├── auth_example.py          # Authentication template
-│   ├── config.py                # Configuration settings
-│   ├── directory_manager.py     # File system operations
-│   └── scraper.py               # API scraping logic
-├── src_bot/                     # Telegram bot integration
-│   ├── auth_example.py          # Bot credentials template
-│   └── telegram_bot.py          # Notification system
-├── src_db/                      # Database operations
-│   ├── config.py                # Database configuration
-│   ├── db_manager.py            # Database management
-│   ├── files_reader.py          # Data file processing
-│   └── models.py                # Database models
-├── data_example/                # Sample data structure
-│   ├── menus/                   # Scraped menu data
-│   ├── restaurants/             # Restaurant information
-│   └── scrap_plan/              # Scraping schedules
-├── app_scrap_*.py               # Main scraping applications
-├── app_db_*.py                  # Database loading scripts
-├── Analysis.ipynb               # Data analysis notebook
-└── req.txt                      # Python dependencies
+├── app/                         # Main application directory
+│   ├── src/                     # Core application modules
+│   │   ├── auth_example.py      # Authentication template
+│   │   ├── config.py            # Configuration settings
+│   │   ├── directory_manager.py # File system operations
+│   │   └── scraper.py           # API scraping logic
+│   ├── src_bot/                 # Telegram bot integration
+│   │   ├── auth_example.py      # Bot credentials template
+│   │   └── telegram_bot.py      # Notification system
+│   ├── src_db/                  # Database operations
+│   │   ├── config.py            # Database configuration
+│   │   ├── db_auth.py           # Database authentication
+│   │   ├── db_manager.py        # Database management
+│   │   ├── files_reader.py      # Data file processing
+│   │   └── models.py            # Database models
+│   ├── data_example/            # Sample data structure
+│   │   ├── menus/               # Scraped menu data
+│   │   ├── restaurants/         # Restaurant information
+│   │   └── scrap_plan/          # Scraping schedules
+│   ├── app_scrap_*.py           # Main scraping applications
+│   ├── app_scrap_*.bash         # Bash wrappers for cron
+│   ├── app_db_*.py              # Database loading scripts
+│   ├── Analysis.ipynb           # Data analysis notebook
+│   └── req.txt                  # Python dependencies
+├── utils/                       # Utility files
+│   └── charts/                  # Generated analysis charts
+├── ANALYSIS_PL.md               # Comprehensive analysis report. Polish version
+├── ANALYSIS_ENG.md              # Comprehensive analysis report. English version
+└── README.md                    # Project documentation
 ```
 
 ## 🔄 Data Collection Process
@@ -92,7 +102,7 @@ The system operates on a carefully planned schedule:
 
 ### 3. Supported Locations
 
-The system tracks data for multiple SmartLunch delivery locations:
+The system tracks data for multiple SmartLunch delivery locations for TME:
 - **CLR** (ID: 1195)
 - **CLŁ** (ID: 1194) 
 - **Biurowiec TME** (ID: 1203)
@@ -142,7 +152,7 @@ The system tracks data for multiple SmartLunch delivery locations:
 
 ## 📊 Data Analysis
 
-The project includes comprehensive analysis in `Analysis.ipynb` covering:
+The project includes comprehensive analysis in `ANALYSIS.md` covering:
 
 ### Key Metrics Analyzed
 - **Meal Availability**: Number of unique meals available per day
